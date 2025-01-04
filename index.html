@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic README Generator</title>
+    <link rel="stylesheet" href="styles/style.css">
+
+</head>
+
+<body>
+    <h1>Dynamic README Generator</h1>
+    <form id="readmeForm" method="POST" action="server.php">
+        <h1>Hi there 👋 I'm <input type="text" id="user_name" name="user_name" required></h1>
+        <h1>🌟 **About Me** </h1>
+        <h1>I'm a passionate developer who loves
+            <input type="text" id="user_name" name="" placeholder="creating innovative solutions" >. 🚀
+        </h1>
+        <h1>- 👯 Looking to collaborate on open-source projects</h1>
+        <h1>🌱 **Currently Exploring**</h1>
+        <div>
+            <label>
+                <input type="checkbox" name="exploring[]" value="💡 AI and Machine Learning">
+                💡 AI and Machine Learning
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="exploring[]" value="🔥 Modern Backend Frameworks">
+                🔥 Modern Backend Frameworks like NestJS
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="exploring[]" value="🎨 Advanced UI/UX design">
+                🎨 Advanced UI/UX design principles
+            </label>
+        </div>
+
+
+        <h1>
+            📌 **My Interests** </h1>
+        <div>
+            <label>
+                <input type="checkbox" name="interest" value="🖥️ Open-source Contributions ">
+                🖥️ Open-source Contributions
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="interest" value="🌍 Building projects with a focus on social impact ">
+                🌍 Building projects with a focus on social impact
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="interest" value="🎯 Game development with Unity  ">
+                🎯 Game development with Unity
+            </label>
+        </div>
+
+        <h1>💬 **Ask Me About**</h1>
+        <div>
+            <label>
+                <input type="checkbox" name="askMeAbout" value="🐍 Python tricks and best practices">
+                🐍 Python tricks and best practices
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="askMeAbout" value="🌐 Building scalable web applications">
+                🌐 Building scalable web applications
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="askMeAbout" value="📈 Optimizing database queries and performance">
+                📈 Optimizing database queries and performance
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="askMeAbout" value="🤖 Leveraging AI for real-world applications">
+                🤖 Leveraging AI for real-world applications
+            </label>
+        </div>
+
+
+
+        <h1>**Let's Connect**</h1>
+        <div>
+            <p>- 🐦 [Twitter] https://twitter.com/
+                <input type="text" id="twitter_username" name="twitter_username" placeholder="Your Twitter username">
+            </p>
+            <p>- 📺 [Twitch] https://twitch.tv/
+                <input type="text" id="twitch_username" name="twitch_username" placeholder="Your Twitch username" >
+            </p>
+            <p>- 🔗 [LinkedIn] https://linkedin.com/in/
+                <input type="text" id="linkedin_username" name="linkedin_username" placeholder="Your LinkedIn username" >
+            </p>
+            <p>- 🐙 [GitHub] https://github.com/
+                <input type="text" id="github_username" name="github_username" placeholder="Your GitHub username" >
+            </p>
+            <p>- 📸 [Instagram] https://instagram.com/
+                <input type="text" id="instagram_username" name="instagram_username" placeholder="Your Instagram username" >
+            </p>
+            <p>- 📝 [Dev.to] https://dev.to/
+                <input type="text" id="devto_username" name="devto_username" placeholder="Your Dev.to username" >
+            </p>
+            <p>- 🧵 [Threads] https://www.threads.net/
+                <input type="text" id="threads_username" name="threads_username" placeholder="Your Threads username" >
+            </p>
+            <p>- 💼 [Medium] https://medium.com/@
+                <input type="text" id="medium_username" name="medium_username" placeholder="Your Medium username" >
+            </p>
+            <p>- 💌 [Email] mailto:
+                <input type="email" id="email_address" name="email_address" placeholder="Your Email Address" >
+            </p>
+        </div>
+
+        <h1>🛠 **My Toolbox** </h1>
+        <h6>💻 Languages:</h6>
+        <div id="skills-languages">
+            <div class="skill" data-name="Python" data-selected="false">
+                <a><img src="https://img.icons8.com/color/48/000000/python.png" alt="Python" /></a>
+                <span>Python</span>
+            </div>
+            <div class="skill" data-name="JavaScript" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript" />
+                <span>JavaScript</span>
+            </div>
+            <div class="skill" data-name="TypeScript" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/typescript.png" alt="TypeScript" />
+                <span>TypeScript</span>
+            </div>
+            <div class="skill" data-name="React.js" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React.js" />
+                <span>React.js</span>
+            </div>
+        </div>
+
+        <h6>🌐 Web:</h6>
+        <div id="skills-web">
+            <div class="skill" data-name="React.js" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React.js" />
+                <span>React.js</span>
+            </div>
+            <div class="skill" data-name="Next.js" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/nextjs.png" alt="Next.js" />
+                <span>Next.js</span>
+            </div>
+            <div class="skill" data-name="Node.js" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js" />
+                <span>Node.js</span>
+            </div>
+            <div class="skill" data-name="Express.js" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/express-js.png" alt="Express.js" />
+                <span>Express.js</span>
+            </div>
+            <div class="skill" data-name="HTML" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML" />
+                <span>HTML</span>
+            </div>
+            <div class="skill" data-name="CSS" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS" />
+                <span>CSS</span>
+            </div>
+        </div>
+
+        <h6>📚 Databases:</h6>
+        <div id="skills-databases">
+            <div class="skill" data-name="MongoDB" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/mongodb.png" alt="MongoDB" />
+                <span>MongoDB</span>
+            </div>
+            <div class="skill" data-name="PostgreSQL" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/postgreesql.png" alt="PostgreSQL" />
+                <span>PostgreSQL</span>
+            </div>
+            <div class="skill" data-name="MySQL" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/mysql-logo.png" alt="MySQL" />
+                <span>MySQL</span>
+            </div>
+        </div>
+
+        <h6>🚀 DevOps:</h6>
+        <div id="skills-devops">
+            <div class="skill" data-name="Docker" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/docker.png" alt="Docker" />
+                <span>Docker</span>
+            </div>
+            <div class="skill" data-name="Kubernetes" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/kubernetes.png" alt="Kubernetes" />
+                <span>Kubernetes</span>
+            </div>
+            <div class="skill" data-name="CI/CD Pipelines" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/jenkins.png" alt="CI/CD Pipelines" />
+                <span>CI/CD Pipelines</span>
+            </div>
+        </div>
+
+        <h6>🧩 Tools:</h6>
+        <div id="skills-tools">
+            <div class="skill" data-name="Git" data-selected="fakse">
+                <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git" />
+                <span>Git</span>
+            </div>
+            <div class="skill" data-name="VS Code" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="VS Code" />
+                <span>VS Code</span>
+            </div>
+            <div class="skill" data-name="Figma" data-selected="false">
+                <img src="https://img.icons8.com/color/48/000000/figma.png" alt="Figma" />
+                <span>Figma</span>
+            </div>
+        </div>
+
+
+        <h1>📂 **Projects**</h1>
+        <div id="projects-section">
+            <div class="project">
+                <label>Project Title:</label>
+                <input type="text" class="project-title" placeholder="[Task Manager App]" >
+                <br>
+                <label>Project Description:</label>
+                <textarea class="project-description" placeholder="A web app to manage daily tasks effectively."
+                    rows="3"></textarea>
+                <br>
+                <label>Project URL:</label>
+                <input type="url" class="project-url" placeholder="https://github.com/username/task-manager" >
+                <br>
+                <label>Category:</label>
+                <select class="project-category">
+                    <option value="Web App">Web App</option>
+                    <option value="API">API</option>
+                    <option value="Open Source">Open Source</option>
+                    <option value="Tool">Tool</option>
+                </select>
+                <br><br>
+            </div>
+        </div>
+        <button type="button" id="addProjectButton">Add Another Project</button>
+
+        <section id="dynamic-content">
+            <h1>✨ Dynamic Content</h1>
+            <div class="content-group">
+                <label for="github-stats">GitHub Stats</label>
+                <input
+                    type="url"
+                    id="github-stats"
+                    name="github-stats"
+                    placeholder="Paste your GitHub Stats URL here"
+                />
+            </div>
+        
+            <div class="content-group">
+                <label for="visitor-counter">Visitor Counter</label>
+                <input
+                    type="url"
+                    id="visitor-counter"
+                    name="visitor-counter"
+                    placeholder="Paste your Visitor Counter URL here"
+                />
+            </div>
+        
+            <div class="content-group">
+                <label for="dynamic-quotes">Dynamic Quotes</label>
+                <input
+                    type="url"
+                    id="dynamic-quotes"
+                    name="dynamic-quotes"
+                    placeholder="Paste your Dynamic Quotes URL here"
+                />
+            </div>
+        
+            <h1>🎨 Graphics & Visuals</h1>
+            <div class="content-group">
+                <label for="ascii-art">ASCII Art</label>
+                <textarea
+                    id="ascii-art"
+                    name="ascii-art"
+                    placeholder="Add your ASCII art here"
+                    rows="4"
+                ></textarea>
+            </div>
+        
+            <div class="content-group">
+                <label for="badges">Badges</label>
+                <input
+                    type="url"
+                    id="badges"
+                    name="badges"
+                    placeholder="Paste your Badge URL here"
+                />
+            </div>
+        
+            <div class="content-group">
+                <label for="gif">GIFs</label>
+                <input
+                    type="url"
+                    id="gif"
+                    name="gif"
+                    placeholder="Paste your GIF URL here"
+                />
+            </div>
+        
+            <h1>🏆 Gamification</h1>
+            <div class="content-group">
+                <label for="trophies">Trophies</label>
+                <input
+                    type="url"
+                    id="trophies"
+                    name="trophies"
+                    placeholder="Paste your Trophies URL here"
+                />
+            </div>
+        
+            <div class="content-group">
+                <label for="snake-animation">Snake Animation</label>
+                <input
+                    type="url"
+                    id="snake-animation"
+                    name="snake-animation"
+                    placeholder="Paste your Snake Animation URL here"
+                />
+            </div>
+                </section>
+    
+
+
+
+        <h1>🎯 **Goals for 2025**</h1>
+        <div>
+            <label>
+                <input type="checkbox" name="goals" value="🚀 Launch a SaaS product">
+                🚀 Launch a SaaS product
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="goals" value="🤝 Contribute to 5 major open-source repositories">
+                🤝 Contribute to 5 major open-source repositories
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="goals" value="💻 Expand my portfolio with cutting-edge projects">
+                💻 Expand my portfolio with cutting-edge projects
+            </label>
+        </div>
+
+
+        <h1>✨ **Fun Facts**</h1>
+        <div>
+            <label>
+                <input type="checkbox" name="funFacts" value="🎵 I love composing electronic music in my free time.">
+                🎵 I love composing electronic music in my free time.
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="funFacts" value="🌟 My side hustle involves designing minimalist logos.">
+                🌟 My side hustle involves designing minimalist logos.
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="funFacts"
+                    value="🚲 I'm an avid cyclist and enjoy exploring nature trails.">
+                🚲 I'm an avid cyclist and enjoy exploring nature trails.
+            </label>
+        </div>
+        <button type="submit" id="downloadButton">Download</button>
+    </form>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
